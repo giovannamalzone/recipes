@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+
+.content {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  //max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+  //background-color: #f3f3f5;
+}
+
+button{
+  margin-right: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: system-ui;
+}
+
+.white{
+background-color: white;
+}
+
+.black{
+  background-color: black;
+  color: white;
+}
+
+.title{
+  font-family: 'Zeyada', cursive;
+  font-size: 50px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: black;
+}
+
+.subtitle{
+  font-family: system-ui;
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-weight: 350;
+}
+
+.image{
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.big{
+  font-size: 23px;
+}
+
+.title-category{
+  padding-top: 20px;
+  font-size: 25px;
+  font-family: system-ui;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5px;
+  align-items: center;
+  margin-left: 15px;
+    .view-more{
+      font-size: 20px;
+     text-decoration-line:underline;
+     font-weight: 300;
+     margin-right: 30px;
+    }
+}
+
+.recipes-row{
+  display: flex;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  overflow-x: scroll;
+  align-content: flex-start;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  .recipe-item{
+    background-color: lightgray;
+    padding: 20px;
+    margin-top: 10px;
+    margin-right: 15px;
+    border-radius: 5px;
+    font-family: system-ui;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+      img{
+        padding-bottom: 10px;
+        border-radius: 50px;
+      }
+  }
+}
+
+
+

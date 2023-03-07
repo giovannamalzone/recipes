@@ -1,0 +1,26 @@
+<app-toolbar></app-toolbar>
+
+<div class="content" role="main">
+  <div class="title">DISCOVER YOUR INNER CHEF</div>
+  <div class="subtitle">
+    Learn to cook 1000+ recipes sitting at home. Explore your favorite dish by
+    diets, meal type, food restriction and more.
+  </div>
+  <img src="assets/foto.jpg" alt="" width="90%" class="image"/>
+  <div>
+    <div class="title-category">
+      <div>Food Recipes</div>
+      <div class="view-more" routerLink="/food-recipes">+view more</div>
+    </div>
+    <div class="recipes-row" >
+      <div  routerLink="/recipe-description" *ngFor="let recipe of recipes" class="recipe-item">
+        <img
+        [src]="recipe.recipe.image"
+        width="200px"
+        alt=""
+      />
+      <div>{{ recipe.recipe.label }}</div>
+      </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+
+:host {
+  font-family: 'Zeyada', cursive;
+  font-size: 30px;
+}
+
+.spacer {
+  flex: 0.5;
+}
+
+.title-home{
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+ //background-color: lightgray;
+  color: black;
+  font-weight: 600;
+}
+
+.row{
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  font-family: system-ui;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+button{
+  margin-right: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: system-ui;
+}
+
+.white{
+background-color: white;
+}
+
+.black{
+  background-color: black;
+  color: white;
+}

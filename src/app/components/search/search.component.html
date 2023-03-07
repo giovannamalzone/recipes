@@ -1,0 +1,18 @@
+<div class="row-search">
+  <input
+  type="text"
+  [(ngModel)]="searchTerm"
+  class="inputSearch"
+  placeholder="Ex: Pasta, Cake, Pie..."
+/>
+<button (click)="searchRecipes()" class="black">Search</button>
+</div>
+
+<div class="wrapper">
+  <div *ngFor="let recipe of recipes">
+    <div class="recipe-item">
+      <img [src]="recipe.image" alt="" width="200px" height="200px"/>
+    <div>{{ recipe.label }}</div>
+    </div>
+  </div>
+</div>

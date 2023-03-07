@@ -1,0 +1,48 @@
+.row-search{
+  margin-inline: 20px;
+}
+
+.inputSearch {
+  height: 30px;
+  width: 90%;
+  //margin-top: 60px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+button{
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: system-ui;
+  height: 45px;
+  width: 70px;
+}
+
+.black{
+  background-color: black;
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 20px;
+  justify-content: start;
+}
+
+.recipe-item{
+  background-color: lightgray;
+  padding: 20px;
+  margin-top: 10px;
+  margin-right: 15px;
+  border-radius: 5px;
+  font-family: system-ui;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}

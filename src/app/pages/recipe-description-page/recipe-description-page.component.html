@@ -1,0 +1,136 @@
+<app-toolbar></app-toolbar>
+
+<div>
+  <div class="content">
+    <img src="assets/tum.png" alt="" />
+    <div class="row-title" *ngFor="let recipe of recipeDetailResult">
+      <div class="title">{{ recipe.recipe.label }}</div>
+      <!-- <mat-icon>save_alt</mat-icon> -->
+      <mat-icon class="icon">picture_as_pdf</mat-icon>
+    </div>
+    <div>
+      <div class="row-itens">
+        <div class="info-item">
+          <mat-icon>access_alarm</mat-icon>
+          <div class="item">30 min</div>
+        </div>
+        <div class="info-item">
+          <mat-icon> fastfood</mat-icon>
+          <div class="item">450 kcal</div>
+        </div>
+        <div class="info-item">
+          <mat-icon> restaurant</mat-icon>
+          <div class="item">Lunch</div>
+        </div>
+        <div class="info-item">
+          <mat-icon>favorite_border</mat-icon>
+          <div class="item">Low-carb</div>
+        </div>
+        <div div class="info-item">
+          <mat-icon>language</mat-icon>
+          <div class="item">American</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-description-recipe">
+    <div class="column left">
+      <div class="title-wrappers">INGREDIENTS</div>
+      <div class="wrapper">
+        <div class="row-ingredient">
+          <img
+            src="data:image/jpeg;base64,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"
+            alt=""
+          />
+          <div class="ingredient-description">
+            <div style="font-weight: 600">Chicken breasts</div>
+            <div>Quantity: 3.0</div>
+            <div>Measure: pound</div>
+          </div>
+        </div>
+        <div class="row-ingredient">
+          <img
+            src="data:image/jpeg;base64,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"
+            alt=""
+          />
+          <div class="ingredient-description">
+            <div style="font-weight: 600; font-size: 18px">Chicken breasts</div>
+            <div>Quantity: 3.0</div>
+            <div>Measure: pound</div>
+          </div>
+        </div>
+        <div class="row-ingredient">
+          <img
+            src="data:image/jpeg;base64,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"
+            alt=""
+          />
+          <div class="ingredient-description">
+            <div style="font-weight: 600; font-size: 18px">Chicken breasts</div>
+            <div>Quantity: 3.0</div>
+            <div>Measure: pound</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column right">
+      <div class="title-wrappers">NUTRITIONAL INFORMATION</div>
+      <div class="row-nutrient-title">
+        <div>NUTRIENT</div>
+        <div>QUANTITY</div>
+      </div>
+      <div class="row-nutrient">
+        <div>Sugar</div>
+        <div>5g</div>
+      </div>
+      <div class="row-nutrient">
+        <div>Sugar</div>
+        <div>5g</div>
+      </div>
+      <div class="row-nutrient">
+        <div>Sugar</div>
+        <div>5g</div>
+      </div>
+      <div class="row-nutrient">
+        <div>Sugar</div>
+        <div>5g</div>
+      </div>
+      <div class="row-nutrient">
+        <div>Sugar</div>
+        <div>5g</div>
+      </div>
+      <div class="row-nutrient">
+        <div>Sugar</div>
+        <div>5g</div>
+      </div>
+      <div class="row-nutrient">
+        <div>Sugar</div>
+        <div>5g</div>
+      </div>
+      <div class="row-nutrient">
+        <div>Sugar</div>
+        <div>5g</div>
+      </div>
+      <div class="row-nutrient">
+        <div>Sugar</div>
+        <div>5g</div>
+      </div>
+      <div class="row-nutrient">
+        <div>Sugar</div>
+        <div>5g</div>
+      </div>
+      <div class="row-nutrient">
+        <div>Sugar</div>
+        <div>5g</div>
+      </div>
+      <div class="row-nutrient">
+        <div>Sugar</div>
+        <div>5g</div>
+      </div>
+      <div class="row-nutrient">
+        <div>Sugar</div>
+        <div>5g</div>
+      </div>
+    </div>
+  </div>
+</div>
