@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 
-export interface Task {
+interface Subtask {
   name: string;
-  completed: boolean;
-  color: ThemePalette;
-  subtasks?: Task[];
+  completed?: boolean;
+  color?: 'warn';
+}
+
+interface Task {
+  name: string;
+  completed: false;
+  color: 'warn';
+  subtasks: Subtask[];
 }
 
 @Component({
@@ -14,51 +20,75 @@ export interface Task {
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent {
-  task: Task = {
-    name: 'MEAL TYPES',
-    completed: false,
-    color: 'warn',
-    subtasks: [
-      { name: 'Breakfast', completed: false, color: 'warn'},
-      { name: 'Lunch', completed: false, color: 'warn' },
-      { name: 'Snack', completed: false, color: 'warn' },
-      { name: 'Teatime', completed: false, color: 'warn' },
-      { name: 'Dinner', completed: false, color: 'warn' },
-    ],
-  };
+  tasks: Task[] = [
+    {
+      name: 'MEALS',
+      completed: false,
+      color: 'warn',
+      subtasks: [
+        { name: 'Breakfast' },
+        { name: 'Lunch' },
+        { name: 'Snack' },
+        { name: 'Teatime' },
+        { name: 'Dinner' },
+      ],
+    },
+    {
+      name: 'DIETS',
+      completed: false,
+      color: 'warn',
+      subtasks: [
+        { name: 'Low-carb' },
+        { name: 'Low-fat' },
+        { name: 'Balanced' },
+        { name: 'Low-sodium' },
+        { name: 'High Fiber' },
+        { name: 'High Protein' },
+      ],
+    },
+    {
+      name: 'CUISINES',
+      completed: false,
+      color: 'warn',
+      subtasks: [
+        { name: 'American' },
+        { name: 'Brazilian' },
+        { name: 'Italian' },
+        { name: 'Teatime' },
+        { name: 'Dinner' },
+      ],
+    },
+  ];
 
-  allComplete: boolean = false;
+  allComplete: boolean[] = [false, false, false];
 
-  updateAllComplete() {
-    this.allComplete =
-      this.task.subtasks != null &&
-      this.task.subtasks.every((t) => t.completed);
+  updateAllComplete(taskIndex: number) {
+    this.allComplete[taskIndex] =
+      this.tasks[taskIndex].subtasks != null &&
+      this.tasks[taskIndex].subtasks.every((t) => t.completed);
   }
 
-  someComplete(): boolean {
-    if (this.task.subtasks == null) {
+  someComplete(taskIndex: number): boolean {
+    if (this.tasks[taskIndex].subtasks == null) {
       return false;
     }
     return (
-      this.task.subtasks.filter((t) => t.completed).length > 0 &&
-      !this.allComplete
+      this.tasks[taskIndex].subtasks.filter((t) => t.completed).length > 0 &&
+      !this.allComplete[taskIndex]
     );
   }
 
-  setAll(completed: boolean) {
-    this.allComplete = completed;
-    if (this.task.subtasks == null) {
+  setAll(completed: boolean, taskIndex: number) {
+    this.allComplete[taskIndex] = completed;
+    if (this.tasks[taskIndex].subtasks == null) {
       return;
     }
-    this.task.subtasks.forEach((t) => (t.completed = completed));
+    this.tasks[taskIndex].subtasks.forEach((t) => (t.completed = completed));
   }
 
-  // Add the following variable to your component class
-showSubtasks: boolean = false;
+  showSubtasks: boolean[] = [false, false, false];
 
-// Add the following method to your component class
-toggleSubtasks() {
-  this.showSubtasks = !this.showSubtasks;
-}
-
+  toggleSubtasks(taskIndex: number) {
+    this.showSubtasks[taskIndex] = !this.showSubtasks[taskIndex];
+  }
 }

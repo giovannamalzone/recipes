@@ -9,10 +9,8 @@
 </div>
 
 <div class="wrapper">
-  <div *ngFor="let recipe of recipes">
-    <div class="recipe-item">
+  <div *ngFor="let recipe of recipes" class="recipe-item" routerLink="/recipe-description">
       <img [src]="recipe.image" alt="" width="200px" height="200px"/>
-    <div>{{ recipe.label }}</div>
+      <div class="recipe-name">{{ recipe.label }}</div>
     </div>
-  </div>
 </div>

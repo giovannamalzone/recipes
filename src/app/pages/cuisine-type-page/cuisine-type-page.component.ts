@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./cuisine-type-page.component.scss']
 })
 export class CuisineTypePageComponent {
+  cuisineTypes = [
+    'American',
+    'Brasilian',
+    'Italian',
+  ]
+
 
 }

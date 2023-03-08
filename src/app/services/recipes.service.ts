@@ -11,6 +11,13 @@ export class RecipesService {
   app_id: string = '3b3fabbb';
   app_key: string = '8321f6ec66c716b7eb7b6055c799d4ec';
   mealType: string = 'Breakfast';
+//   mealType = [
+//     'Breakfast',
+//     'Lunch',
+//     'Snack',
+//     'Teatime',
+//     'Dinner'
+// ];
 
   constructor(private http: HttpClient) {}
 
@@ -39,5 +46,7 @@ export class RecipesService {
       })
     );
   }
+
+
 
 }
