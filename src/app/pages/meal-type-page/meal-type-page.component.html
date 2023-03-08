@@ -1,2 +1,21 @@
 <app-toolbar></app-toolbar>
 
+<div class="content">
+  <div *ngFor="let mealType of mealTypes">
+    <div class="title-category">
+      {{ mealType }}
+    </div>
+    <div class="recipes">
+      <div class="recipes-row">
+        <ng-container *ngIf="recipesByTypes[mealType] | async as recipes">
+          <div *ngFor="let recipe of recipes">
+            <div routerLink="/recipe-description" class="recipe-item">
+              <img src="{{ recipe.recipe.image }}" alt="{{ recipe.recipe.label }}" width="200px"/>
+              <div class="recipe-name">{{ recipe.recipe.label }}</div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

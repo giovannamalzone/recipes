@@ -8,9 +8,27 @@ import { Component } from '@angular/core';
 export class CuisineTypePageComponent {
   cuisineTypes = [
     'American',
-    'Brasilian',
+    'Asian',
+    'British',
+    'Central Europe',
+    'Chinese',
+    'Eastern Europe',
+    'French',
+    'Indian',
     'Italian',
-  ]
+    'Japanese',
+    'Mediterranean',
+    'Mexican',
+    'Middle Eastern',
+    'Nordic',
+    'South American',
+    'South East Asian',
+  ];
+
+  cuisineRecipes: any;
 
 
+
+
+  
 }

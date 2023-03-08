@@ -8,24 +8,40 @@ import { map, Observable } from 'rxjs';
 export class RecipesService {
   url: string = 'https://api.edamam.com/api/recipes/v2';
   type: string = 'public';
-  app_id: string = '3b3fabbb';
-  app_key: string = '8321f6ec66c716b7eb7b6055c799d4ec';
-  mealType: string = 'Breakfast';
-//   mealType = [
-//     'Breakfast',
-//     'Lunch',
-//     'Snack',
-//     'Teatime',
-//     'Dinner'
-// ];
+  app_id: string = '14dfd39b';
+  app_key: string = 'd5ac8d96f13f78d6142a7bf0d69fe025';
 
   constructor(private http: HttpClient) {}
 
-  getMealTypeRecipes(): Observable<any> {
-    return this.http.get<any>(this.url + "?type=" + this.type + "&app_id=" + this.app_id + "&app_key=" + this.app_key + "&mealType=" + this.mealType)
+  getMealTypeRecipes(): {[key: string]: Observable<any>} {
+    const mealTypes = ['Breakfast', 'Lunch', 'Snack', 'Teatime', 'Dinner'];
+    const recipesByType: {[key: string]: Observable<any>} = {};
+
+    for (const mealType of mealTypes) {
+
+      const recipe$ = this.http.get<any>(this.url + "?type=" + this.type + "&app_id=" + this.app_id + "&app_key=" + this.app_key + "&mealType=" + mealType)
     .pipe(
       map((data => data.hits))
     )
+      recipesByType[mealType] = recipe$;
+    }
+
+    return recipesByType;
+  }
+
+  getDietTypeRecipes(): {[key: string]: Observable<any>} {
+    const dietTypes = ['low-carb', 'low-fat', 'balanced', 'low-sodium', 'high-fiber', 'high-protein'];
+    const recipesByDiet: {[key: string]: Observable<any>} = {};
+
+    for (const dietType of dietTypes) {
+      const recipe$ = this.http.get<any>(this.url + "?type=" + this.type + "&app_id=" + this.app_id + "&app_key=" + this.app_key + "&diet=" + dietType)
+        .pipe(
+          map((data => data.hits))
+        );
+      recipesByDiet[dietType] = recipe$;
+    }
+
+    return recipesByDiet;
   }
 
   getRecipeDetails(idRecipe: any): Observable<any> {
@@ -46,7 +62,5 @@ export class RecipesService {
       })
     );
   }
-
-
 
 }

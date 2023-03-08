@@ -14,18 +14,18 @@ export class HomePageComponent implements OnInit {
   constructor(private recipesService: RecipesService,  private router: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getMealTypeRecipes();
+    // this.getMealTypeRecipes();
   }
 
-getMealTypeRecipes(){
-  this.recipesService.getMealTypeRecipes().subscribe(
-    (result) => {
-      this.recipes = result;
-    },
-    (err) => {
-      console.log('Erro ao listar', err);
-    }
-  );
-}
+// getMealTypeRecipes(){
+//   this.recipesService.getMealTypeRecipes().subscribe(
+//     (result) => {
+//       this.recipes = result;
+//     },
+//     (err) => {
+//       console.log('Erro ao listar', err);
+//     }
+//   );
+// }
 
 }
