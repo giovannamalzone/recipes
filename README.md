@@ -2,7 +2,7 @@
 
 This site can show you and search recipes according to specific meals, diets, cuisine types and much more.
 
-(assets/home.png)
+![home](assets/home.png)
 
 ## 💡 About the project
 
@@ -16,11 +16,11 @@ The user can:
 
 - search for specific dishes using filters, navigate by meals, diets and cuisine types;
 
-(assets\search.png)
+![home](assets\search.png)
 
 - see the image, time, calories, meal, diet, cuisine type, nutritional information and the ingrediets for each recipe and
 
-(assets/recipe.png)
+![home](assets/recipe.png)
 
 - download the recipe informations.
 
