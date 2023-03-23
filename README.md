@@ -2,13 +2,15 @@
 
 This site can show you and search recipes according to specific meals, diets, cuisine types and much more.
 
-(assets/home.png)
+![home](src/assets/home.png)
 
 ## 💡 About the project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli), version 15.0.5.
 
-The desing was inspired in this picture found on Dribble ().
+The desing was inspired in this picture found Dribbble, posted by Rishabh Singh.
+
+![dribble](src/assets/dribbble.png)
 
 ## 🔥 Project features
 
@@ -16,11 +18,11 @@ The user can:
 
 - search for specific dishes using filters, navigate by meals, diets and cuisine types;
 
-(assets\search.png)
+![search](src/assets/search.png)
 
 - see the image, time, calories, meal, diet, cuisine type, nutritional information and the ingrediets for each recipe and
 
-(assets/recipe.png)
+![recipe](src/assets/recipe.png)
 
 - download the recipe informations.
 
