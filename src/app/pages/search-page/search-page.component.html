@@ -25,7 +25,7 @@
               [color]="subtask.color"
               (ngModelChange)="updateAllComplete(i)"
             >
-              {{ subtask.name }}
+              {{ subtask.name | titlecase }}
             </mat-checkbox>
           </li>
         </ul>
