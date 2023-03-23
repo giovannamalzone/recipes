@@ -10,7 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 The desing was inspired in this picture found Dribbble, posted by Rishabh Singh.
 
-![dribble](src/assets/dribbble.png)
+![dribble](src/assets/dribbble.webp)
 
 ## 🔥 Project features
 
