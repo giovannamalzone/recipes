@@ -8,9 +8,9 @@ This site can show you and search recipes according to specific meals, diets, cu
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli), version 15.0.5.
 
-The desing was inspired in this picture found on Dribbble, posted by Rishabh Singh:
+The desing was inspired in this picture found Dribbble, posted by Rishabh Singh.
 
-
+![dribble](src/assets/dribbble.png)
 
 ## 🔥 Project features
 
