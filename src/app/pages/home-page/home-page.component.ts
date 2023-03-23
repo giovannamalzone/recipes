@@ -5,27 +5,28 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-
   recipes: any;
 
-  constructor(private recipesService: RecipesService,  private router: ActivatedRoute) { }
+  constructor(
+    private recipesService: RecipesService,
+    private router: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    // this.getMealTypeRecipes();
+    this.getHomeRecipes();
   }
 
-// getMealTypeRecipes(){
-//   this.recipesService.getMealTypeRecipes().subscribe(
-//     (result) => {
-//       this.recipes = result;
-//     },
-//     (err) => {
-//       console.log('Erro ao listar', err);
-//     }
-//   );
-// }
-
+  getHomeRecipes() {
+    this.recipesService.getHomeRecipes().subscribe(
+      (result) => {
+        this.recipes = result.hits;
+      },
+      (err) => {
+        console.log('Erro ao listar', err);
+      }
+    );
+  }
 }

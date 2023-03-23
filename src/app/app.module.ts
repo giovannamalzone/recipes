@@ -16,13 +16,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { SearchComponent } from './components/search/search.component';
-import { FilterComponent } from './components/filter/filter.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTreeModule } from '@angular/material/tree';
-import { FoodCarouselComponent } from './components/food-carousel/food-carousel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RecipesService } from './services/recipes.service';
+import { UppercaseDirective } from './directives/uppercase/uppercase.directive';
 
 @NgModule({
   declarations: [
@@ -35,9 +33,7 @@ import { RecipesService } from './services/recipes.service';
     FoodRecipesPageComponent,
     HomePageComponent,
     ToolbarComponent,
-    SearchComponent,
-    FilterComponent,
-    FoodCarouselComponent
+    UppercaseDirective,
   ],
   imports: [
     BrowserModule,
@@ -50,9 +46,9 @@ import { RecipesService } from './services/recipes.service';
     FormsModule,
     MatTreeModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [RecipesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -6,23 +6,32 @@
     Learn to cook 1000+ recipes sitting at home. Explore your favorite dish by
     diets, meal type, food restriction and more.
   </div>
-  <img src="assets/foto.jpg" alt="" width="90%" class="image"/>
+  <img
+    src="assets/food.png"
+    alt=""
+    width="90%"
+    class="image"
+    style="margin-top: 80px; margin-bottom: 80px"
+  />
   <div>
-    <!-- <div class="title-category">
+    <div class="title-category">
       <div>Food Recipes</div>
       <div class="view-more" routerLink="/food-recipes">+view more</div>
     </div>
     <div class="recipes">
-      <div class="recipes-row" >
-        <div  routerLink="/recipe-description" *ngFor="let recipe of recipes" class="recipe-item">
-          <img
-          [src]="recipe.recipe.image"
-          width="200px"
-          alt=""
-        />
-        <div class="recipe-name">{{ recipe.recipe.label }}</div>
-        </div>
+      <div class="recipes-row">
+        <div
+          *ngFor="let recipe of recipes"
+          class="recipe-item"
+          [routerLink]="[
+            '/recipe-description',
+            recipe.recipe.uri.split('#')[1]
+          ]"
+        >
+          <img [src]="recipe.recipe.image" width="200px" alt="" />
+          <div class="recipe-name">{{ recipe.recipe.label }}</div>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
+</div>

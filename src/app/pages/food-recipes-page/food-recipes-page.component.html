@@ -1,1 +1,21 @@
 <app-toolbar></app-toolbar>
+
+<div class="content">
+  <div class="wrapper">
+    <div *ngFor="let dishType of dishTypes">
+      <div *ngIf="recipesByDishes[dishType] | async as recipes">
+        <div
+          *ngFor="let recipe of recipes"
+          class="recipe-item"
+          [routerLink]="[
+            '/recipe-description',
+            recipe.recipe.uri.split('#')[1]
+          ]"
+        >
+          <img [src]="recipe.recipe.image" width="200px" alt="" />
+          <div class="recipe-name">{{ recipe.recipe.label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

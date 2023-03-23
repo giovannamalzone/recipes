@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CuisineTypePageComponent } from './cuisine-type-page.component';
 
 describe('CuisineTypePageComponent', () => {
@@ -8,9 +7,8 @@ describe('CuisineTypePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CuisineTypePageComponent ]
-    })
-    .compileComponents();
+      declarations: [CuisineTypePageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CuisineTypePageComponent);
     component = fixture.componentInstance;

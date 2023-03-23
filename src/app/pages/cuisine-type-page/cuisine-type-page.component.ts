@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { RecipesService } from 'src/app/services/recipes.service';
 
 @Component({
   selector: 'app-cuisine-type-page',
   templateUrl: './cuisine-type-page.component.html',
-  styleUrls: ['./cuisine-type-page.component.scss']
+  styleUrls: ['./cuisine-type-page.component.scss'],
 })
 export class CuisineTypePageComponent {
   cuisineTypes = [
@@ -25,10 +27,15 @@ export class CuisineTypePageComponent {
     'South East Asian',
   ];
 
-  cuisineRecipes: any;
+  recipesByCuisines: { [key: string]: Observable<any> } = {};
 
+  constructor(private serviceRecipe: RecipesService) {}
 
+  ngOnInit(): void {
+    this.getCuisineTypeRecipes();
+  }
 
-
-  
+  getCuisineTypeRecipes() {
+    this.recipesByCuisines = this.serviceRecipe.getCuisneTypeRecipes();
+  }
 }

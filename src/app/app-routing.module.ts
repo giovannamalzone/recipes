@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
 import { CuisineTypePageComponent } from './pages/cuisine-type-page/cuisine-type-page.component';
 import { DietsPageComponent } from './pages/diets-page/diets-page.component';
 import { FoodRecipesPageComponent } from './pages/food-recipes-page/food-recipes-page.component';
@@ -35,18 +34,14 @@ const routes: Routes = [
     component: FoodRecipesPageComponent,
   },
   {
-    path: 'recipe-description',
+    path: 'recipe-description/:recipeId',
     component: RecipeDescriptionPageComponent,
   },
 ];
 
 @NgModule({
-  imports: [
-      RouterModule.forRoot(routes)
-  ],
+  imports: [RouterModule.forRoot(routes)],
 
-  exports: [
-      RouterModule
-  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

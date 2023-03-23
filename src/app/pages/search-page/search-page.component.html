@@ -1,5 +1,58 @@
 <app-toolbar></app-toolbar>
 
-<app-filter></app-filter>
+<div class="row">
+  <div class="title-row-filter">FILTER BY:</div>
+  <div *ngFor="let task of tasks; let i = index">
+    <section class="example-section">
+      <span>
+        <mat-checkbox
+          [checked]="allComplete[i]"
+          [color]="task.color"
+          [indeterminate]="someComplete(i)"
+          (change)="setAll($event.checked, i)"
+        >
+          {{ task.name }}
+        </mat-checkbox>
+      </span>
+      <span>
+        <button class="toggle-subtasks" (click)="toggleSubtasks(i)">
+          {{ showSubtasks[i] ? "-" : "+" }}
+        </button>
+        <ul *ngIf="showSubtasks[i]">
+          <li *ngFor="let subtask of task.subtasks">
+            <mat-checkbox
+              [(ngModel)]="subtask.completed"
+              [color]="subtask.color"
+              (ngModelChange)="updateAllComplete(i)"
+            >
+              {{ subtask.name }}
+            </mat-checkbox>
+          </li>
+        </ul>
+      </span>
+    </section>
+  </div>
+</div>
 
-<app-search></app-search>
+<div class="row-search">
+  <input
+    type="text"
+    appUppercase="th"
+    false
+    [(ngModel)]="searchTerm"
+    class="inputSearch"
+    placeholder="Ex: Pasta, Cake, Pie..."
+  />
+  <button (click)="searchRecipes()" class="black">Search</button>
+</div>
+
+<div class="wrapper" *ngIf="recipes">
+  <div
+    *ngFor="let recipe of recipes"
+    class="recipe-item"
+    [routerLink]="['/recipe-description', recipe.uri.split('#')[1]]"
+  >
+    <img [src]="recipe.image" alt="" width="200px" height="200px" />
+    <div class="recipe-name">{{ recipe.label }}</div>
+  </div>
+</div>

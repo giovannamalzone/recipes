@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Zeyada&display=swap");
 
 :host {
-  font-family: 'Zeyada', cursive;
+  font-family: "Zeyada", cursive;
   font-size: 30px;
 }
 
@@ -9,7 +9,7 @@
   flex: 0.5;
 }
 
-.title-home{
+.title-home {
   margin-top: 10px;
   margin-left: 5px;
 }
@@ -20,16 +20,13 @@
   left: 0;
   right: 0;
   height: 80px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-inline: 40px;
   display: flex;
   align-items: center;
- //background-color: lightgray;
-  color: black;
   font-weight: 600;
 }
 
-.row{
+.row {
   flex: 1;
   display: flex;
   justify-content: space-between;
@@ -38,22 +35,19 @@
   font-weight: 400;
 }
 
-button{
+button {
   margin-right: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px 10px;
   border-radius: 5px;
   font-size: 15px;
   font-family: system-ui;
 }
 
-.white{
-background-color: white;
+.white {
+  background-color: white;
 }
 
-.black{
+.black {
   background-color: black;
   color: white;
 }
