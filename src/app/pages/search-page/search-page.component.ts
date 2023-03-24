@@ -88,7 +88,6 @@ export class SearchPageComponent {
   searchRecipes() {
     let url = `https://api.edamam.com/api/recipes/v2?type=public&app_id=1d02db66&app_key=0336d7bd6b33de1a31f3830cf2d415c0`;
 
-    // Adicione cada subtask selecionada à URL como parâmetros de pesquisa
     this.tasks.forEach((task) => {
       task.subtasks.forEach((subtask) => {
         if (subtask.completed) {
